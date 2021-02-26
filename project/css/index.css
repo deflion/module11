@@ -20,7 +20,7 @@ li {
 
 button {
   margin-top: 10px;
-  background-color: #008cba;
+  background-color: #001069;
   border: none;
   color: white;
   font-size: 14px;
@@ -42,8 +42,8 @@ input {
   vertical-align: middle;
   white-space: normal;
   background: none;
-  background-color: #3cbc8d;
-  color: white;
+  background-color: #c5c5c5;
+  /* color: white; */
   max-width: 200px;
 }
 
@@ -76,6 +76,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  min-width: 265px;;
 }
 
 .line {
@@ -127,6 +128,10 @@ main {
   background: #cd853f;
 }
 
+.fruit_grey {
+  background: #6b6b6b;
+}
+
 .fruit__info {
   display: flex;
   justify-content: center;
@@ -135,4 +140,13 @@ main {
   background: #fff;
   height: 100%;
   padding: 10px;
+}
+
+input:required {
+  border: 3px solid red;
+  border-radius: 10px;
+}
+
+input:valid {
+  border: none;
 }
