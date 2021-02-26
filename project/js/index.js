@@ -107,7 +107,6 @@ const filterFruits = () => {
   });
 };
 
-
 filterButton.addEventListener('click', () => {
   if ((minWeightInput.value != '') && (maxWeightInput.value != '')) {
     minWeight = parseInt(minWeightInput.value); // знаение поле ввода мин 
@@ -124,24 +123,16 @@ filterButton.addEventListener('click', () => {
   };
 });
 
-
-// refreshButton.addEventListener('click', () => {
-//   fruits = newFruits;
-//   shuffleFruits();
-//   display();
-// });
-
 /*** СОРТИРОВКА ***/
 
 let sortKind = 'bubbleSort'; // инициализация состояния вида сортировки
-let sortTime = '-'; // инициализация состояния времени сортировки
+let sortTime = '0.000 мс'; // инициализация состояния времени сортировки
 
 const comparationColor = (a, b) => {
-  // TODO: допишите функцию сравнения двух элементов по цвету
-
   const priority = ['желтый', 'зеленый', 'фиолетовый', 'светло-коричневый', 'розово-красный']
   const priority1 = priority.indexOf(a.color);
   const priority2 = priority.indexOf(b.color);
+  console.log(priority1 > priority2);
   return priority1 > priority2;
 };
 
@@ -160,9 +151,9 @@ const sortAPI = {
   },
 
   quickSort(arr, comparation) {
-    // TODO: допишите функцию быстрой сортировки
+  
   },
-
+ 
   // выполняет сортировку и производит замер времени
   startSort(sort, arr, comparation) {
     const start = new Date().getTime();
@@ -180,6 +171,7 @@ sortChangeButton.addEventListener('click', () => {
 
   (sortKind == 'bubbleSort') ? sortKind = 'quickSort ' : sortKind = 'bubbleSort';
   sortKindLabel.textContent = sortKind;
+  sortTimeLabel.textContent = '0.000 мс';
 
 });
 
